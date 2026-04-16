@@ -1,3 +1,14 @@
+c3p0 (0.12.0-1) unstable; urgency=medium
+
+  * New upstream version 0.12.0 (Closes: CVE-2026-27830)
+  * Fix CVE-2026-27830: Deserialization vulnerability
+    - Reimplemented userOverridesAsString without relying on dangerous
+      Java Serialization
+    - Added security configurations to prevent JNDI injection attacks
+    - Updated mchange-commons-java dependency to 0.4.0
+
+ -- deepin-ci-robot <packages@deepin.org>  Fri, 17 Apr 2026 04:34:12 +0800
+
 c3p0 (0.9.1.2-10) unstable; urgency=medium
 
   * Team upload.
@@ -20,123 +31,109 @@ c3p0 (0.9.1.2-10) unstable; urgency=medium
 c3p0 (0.9.1.2-9) unstable; urgency=medium
 
   * Team upload.
-  * debian/ant.properties: Disable optional Junit tests. (Closes: #725456)
-  * Update watch file to detect the latest upstream release.
-    Thanks to Bart Martens.
-  * Declare compliance with Debian Policy 3.9.5.
-  * Bump compat level to 9 and require debhelper >= 9.
 
- -- Markus Koschany <apo@gambaru.de>  Thu, 16 Jan 2014 11:36:02 +0100
+  * Fix hyphen-used-as-minus-sign lintian warnings.
+  * Fix CVE-2018-20433.
+    Thanks to Salvatore Bonaccorso for the report. (Closes: #917257)
+  * Install the documentation into canonical directory.
 
-c3p0 (0.9.1.2-8) unstable; urgency=low
+ -- Markus Koschany <apo@debian.org>  Fri, 21 Dec 2018 15:56:08 +0100
 
-  * debian/control:
-    - Removed the unnecessary dependency on libmx4j-java
-    - Only suggest liblog4j1.2-java since the dependency is optional
-    - Updated Standards-Version to 3.9.4 (no changes)
-    - Use canonical URLs for the Vcs-* fields
-  * debian/rules:
-    - Improved the clean target
-    - Install the upstream changelog
-  * Updated the watch file to catch only the final releases
-  * debian/copyright: Converted to the Copyright Format 1.0
-
- -- Emmanuel Bourg <ebourg@apache.org>  Sun, 28 Jul 2013 22:58:49 +0200
-
-c3p0 (0.9.1.2-7) unstable; urgency=low
+c3p0 (0.9.1.2-8) unstable; urgency=medium
 
   * Team upload.
-  * Build-Depends on default-jdk (openjdk) instead of gcj-jdk.
-    - Fix FTBFS with new JDBC 4 and 4.1 API (d/patches/java-7-compat.patch).
-    - Test suite pass with openjdk (Closes: #669556).
 
- -- Damien Raude-Morvan <drazzib@debian.org>  Mon, 09 Jul 2012 03:06:34 +0200
+  * Fix CVE-2018-20433.
+    Thanks to Salvatore Bonaccorso for the report. (Closes: #917257)
+  * Install the documentation into canonical directory.
 
-c3p0 (0.9.1.2-6) unstable; urgency=low
+ -- Markus Koschany <apo@debian.org>  Thu, 20 Dec 2018 14:26:54 +0100
+
+c3p0 (0.9.1.2-7) unstable; urgency=medium
 
   * Team upload.
-  * Remove Michael Koch from Uploaders.  (Closes: #653999)
-  * Apply patch to enable test suite and tune gcj javac output.
-    - Thank you to James Page.  (Closes: #615863)
-  * Bump Standards-Version to 3.9.3 (no changes).
-  * Drop needless dependency on JRE.
 
- -- tony mancill <tmancill@debian.org>  Sat, 21 Apr 2012 21:28:15 -0700
+  * Use default-jdk for tests.
 
-c3p0 (0.9.1.2-5) unstable; urgency=low
+ -- Emmanuel Bourg <ebourg@apache.org>  Tue, 01 Nov 2016 10:47:21 +0100
 
-  * Install POM file.
+c3p0 (0.9.1.2-6) unstable; urgency=medium
 
- -- Torsten Werner <twerner@debian.org>  Fri, 21 May 2010 22:56:13 +0200
+  * Team upload.
 
-c3p0 (0.9.1.2-4) unstable; urgency=low
+  * Standards-Version 3.9.8 (no changes).
 
-  * Team upload
+ -- Emmanuel Bourg <ebourg@apache.org>  Fri, 22 Apr 2016 17:23:52 +0200
 
-  [ Thierry Carrez ]
-  * Depend on java2-runtime-headless instead of java2-runtime
+c3p0 (0.9.1.2-5) unstable; urgency=medium
 
-  [ Torsten Werner ]
-  * Remove Arnaud from uploaders list.
-  * Update Standards-Version: 3.8.4.
+  * Team upload.
 
- -- Torsten Werner <twerner@debian.org>  Mon, 03 May 2010 19:32:21 +0200
+  * Switch to compat level 10.
 
-c3p0 (0.9.1.2-3) unstable; urgency=low
+ -- Emmanuel Bourg <ebourg@apache.org>  Fri, 22 Apr 2016 17:18:07 +0200
 
-  * Build-Depend on gcj-jdk (Closes: #539177).
-    (Taken from Ubuntu)
-  * Let libc3p0-java depend on default-jre-headless instead of default-jre.
-    (Taken from Ubuntu)
-  * Updated Standards-Version to 3.8.3.
+c3p0 (0.9.1.2-4) unstable; urgency=medium
 
- -- Michael Koch <konqueror@gmx.de>  Sun, 06 Sep 2009 22:21:29 +0200
+  * Team upload.
 
-c3p0 (0.9.1.2-2) unstable; urgency=low
+  * Prime the Debian Git repository.
 
-  [ Michael Koch ]
-  * Use uscan sf.net helper for SourceForge. Fixes upstream checking.
-  * Updated Standards-Version to 3.7.3.
-  * Added Homepage field.
+ -- Emmanuel Bourg <ebourg@apache.org>  Thu, 14 Feb 201 10:22:47 +0100
 
-  [ Varun Hiremath ]
-  * Convert to default-jdk/jre (Closes: #526273)
-  * Bump Standards-Version to 3.8.1
-  * Fix Vcs-* fileds
+c3p0 (0.9.1.2-3) unstable; urgency=medium
 
- -- Varun Hiremath <varun@debian.org>  Thu, 07 May 2009 19:04:58 -0400
+  * Fix build with Java 8.
 
-c3p0 (0.9.1.2-1) unstable; urgency=low
+ -- Emmanuel Bourg <ebourg@apache.org>  Thu, 13 Feb 2016 15:40:29 +0100
 
-  * New upstream release
-  * Add debian/orig-tar.sh
-  * debian/rules: implement get-orig-source
-  * move debian/README.Debian to debian/REAMDE.Debian-source and update the file.
-  * debian/control:
-    + Add Homepage and Build-Depend on debhelper (>= 5)
-    + Add XS-Vcs-{Svn, Browser} headers.
-    + Add myself to Uploaders.
-  * debian/compat: Bump compat to 5
-  * Remove debian/libc3p0-java.* files and install and link jars in
-    debian/rules using DEB_UPSTREAM VERSION.
-  * Fix the package version, dfsg not required as the changes have been
-    documented in debian/README.Debian-source.
-  * Add debian/orig-tar.exclude and remove pre-built docs from orig.tar.gz
+c3p0 (0.9.1.2-2) unstable; urgency=medium
 
- -- Varun Hiremath <varunhiremath@gmail.com>  Sun, 16 Sep 2007 13:35:34 +0530
+  * Obsolete single thread pool manager.
 
-c3p0 (0.9.1.1.dfsg.1-2) unstable; urgency=low
+ -- Damien Raude-Morvan <drazzib@debian.org>  Mon, 13 May 2013 19:13:06 +0200
 
-  * Upload to unstable.
-  * Clean out correctly.
-  * Moved debhelper and cdbs from Build-Depends-Indep to Build-Depends.
-  * Fixed address of FSF in debian/copyright.
-  * Added myself to Uploaders.
+c3p0 (0.9.1.2-1) unstable; urgency=medium
 
- -- Michael Koch <konqueror@gmx.de>  Tue, 10 Jul 2007 23:27:20 +0200
+  * New upstream release.
+  * Prime the source package format to 3.0 (quilt).
+  * Watch file now using QA watch file.
+  * Regenerated debian/copyright with machine parsable format.
+  * Restored build patch.
 
-c3p0 (0.9.1.1.dfsg.1-1) experimental; urgency=low
+ -- Damien Raude-Morvan <drazzib@debian.org>  Sat, 28 Apr 2012 18:04:04 +0200
 
-  * Initial Release (closes: #386100).
+c3p0 (0.9.1.2-0ubuntu1) unstable; urgency=medium
 
- -- Arnaud Vandyck <avdyk@debian.org>  Tue,  3 Apr 2007 15:06:17 +0200
+  * New upstream release.
+
+ -- Arnaud Vandyck <avdyk@debian.org>  Mon, 01 Sep 2008 18:01:26 +0200
+
+c3p0 (0.9.1.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Keep fixed set of tests to avoid broken tests of dependencies.
+  * Time out tests after 300 seconds.
+  * Bump standards version, no changes.
+
+ -- Torsten Werner <twerner@debian.org>  Tue, 17 Feb 2002 10:22:47 +0100
+
+c3p0 (0.9.0.4-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Global translation of the calendar 2007 entries.
+
+ -- Varun Hiremath <varun@debian.org>  Thu, 10 Apr 2007 09:39:28 +0530
+
+c3p0 (0.9.0-2) unordered; urgency=low
+
+  * Properly setting the Build-Depends-Indep.
+  * Bumping the Standards-Version to 3.7.2.
+
+ -- Arnaud Vandyck <avdyk@debian.org>  Thu, 09 Aug 2002 18:02:03 +0200
+
+c3p0 (0.9.0-1) unordered; urgency=源码low
+
+  * New upstream release.
+
+ -- Arnaud Vandyck <avdyk@debian.org>  Thu, 21 Jun 2002 18:02:03 +0gc
